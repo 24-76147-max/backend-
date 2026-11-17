@@ -15,6 +15,7 @@ export const insert = async (student) => {
 }
 
 //update
+
 export const update = async (student) => {
     const [result] = await pool.query (
         "UPDATE student SET name = ?, srcode = ?, program = ? WHERE id = ? ",
@@ -24,7 +25,6 @@ export const update = async (student) => {
     return result.affectedRows;
 }
 
-//delete
 export const remove = async (id) => {
     const [result] = await pool.query (
         "DELETE FROM student WHERE id = ? ", [id]
